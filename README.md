@@ -4,7 +4,7 @@
 
 Stereophonic audio, especially binaural audio, plays an essential role in immersive viewing environments. Recent research has explored generating stereophonic audios guided by visual cues and multi-channel audio collections in a fully-supervised manner. However, due to the requirement of professional recording devices, existing datasets are limited in scale and variety, which impedes the generalization of supervised methods to real-world scenarios. In this work, we propose **PseudoBinaural**, an effective pipeline that is free of binaural recordings. The key insight is to carefully build pseudo visual-stereo pairs with mono data for training. Specifically, we leverage spherical harmonic decomposition and head-related impulse response (HRIR) to identify the relationship between the location of a sound source and the received binaural audio. Then in the visual modality, corresponding visual cues of the mono data are manually placed at sound source positions to form the pairs. Compared to fully-supervised paradigms, our binaural-recording-free pipeline shows great stability in the cross-dataset evaluation and comparable performance under subjective preference. Moreover, combined with binaural recorded data, our method is able to further boost the performance of binaural audio generation under supervised settings.
 
-[[Project]](https://sheldontsui.github.io/projects/PseudoBinaural) [[Paper]](https://sheldontsui.github.io/projects/PseudoBinaural) [[Demo]](https://youtu.be/r-uC2MyAWQc)
+[[Project]](https://sheldontsui.github.io/projects/PseudoBinaural) [[Paper]](https://arxiv.org/abs/2104.06162) [[Demo]](https://youtu.be/r-uC2MyAWQc)
 
 <img src='docs/teaser.png' width=880>
 
