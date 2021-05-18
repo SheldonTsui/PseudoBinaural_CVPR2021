@@ -1,8 +1,6 @@
-import pdb
 import os.path
 import time
 import librosa
-import h5py
 import random
 import math
 import numpy as np
@@ -47,11 +45,10 @@ class StereoDataset(Dataset):
         self.opt = opt
         self.audios = []
 
-        #load hdf5 file here
-        h5f_path = os.path.join(opt.hdf5FolderPath, opt.mode+".h5")
-        h5f = h5py.File(h5f_path, 'r')
-        self.audios = h5f['audio'][:]
-        self.audios = [bytes.decode(_path) for _path in self.audios]
+        #load audio files here
+        with open(os.path.join(opt.splitPath, opt.mode+".txt"), 'r') as cur_f:
+            audio_files = cur_f.readlines()
+        self.audios = [audio_file[:-1] for audio_file in audio_files]
 
         normalize = transforms.Normalize(
         mean=[0.485, 0.456, 0.406],

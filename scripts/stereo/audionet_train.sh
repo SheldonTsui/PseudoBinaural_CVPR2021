@@ -3,7 +3,7 @@ split_id=${2}
 exp_name=AudioNet
 
 CUDA_VISIBLE_DEVICES=${gpus} python train.py --name ${exp_name}_${split_id} \
-    --hdf5FolderPath ./dataset/cleaned_splits/split${split_id} \
+    --splitPath ./new_splits/split${split_id} \
     --save_epoch_freq 50 \
     --display_freq 10 \
     --save_latest_freq 100 \

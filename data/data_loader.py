@@ -21,10 +21,10 @@ def CreateDataLoader(opt):
         dataset = ASMRDataset(opt, ASMR_file)
     elif 'Pseudo' in opt.dataset_mode:
         from data.Pseudo_dataset import PseudoDataset
-        list_sample_file = 'data/data_splits/{}_{}.txt'.format(opt.mode, opt.datalist)
+        list_sample_file = 'data/mono_sources/{}_{}.txt'.format(opt.mode, opt.datalist)
         dataset = PseudoDataset(opt, list_sample_file)
     elif 'Augment' in opt.dataset_mode:
-        list_sample_file = 'data/data_splits/{}_{}.txt'.format(opt.mode, opt.datalist)
+        list_sample_file = 'data/mono_sources/{}_{}.txt'.format(opt.mode, opt.datalist)
         if 'ASMR' in opt.dataset_mode:
             from data.Augment_ASMR_dataset import AugmentDataset
             ASMR_file = 'data/asmr_splits/{}.txt'.format(opt.mode)

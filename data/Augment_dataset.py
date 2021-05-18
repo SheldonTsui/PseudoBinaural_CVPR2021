@@ -3,7 +3,6 @@ import os
 import os.path as osp
 import time
 import librosa
-import h5py
 import random
 import math
 import numpy as np

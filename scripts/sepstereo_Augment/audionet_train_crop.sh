@@ -2,8 +2,8 @@ gpus=${1}
 split_id=${2}
 exp_name=Augment_AudioNet_sepstereo_crop
 
-CUDA_VISIBLE_DEVICES=${gpus} python train_diffusion.py --name ${exp_name}_${split_id} \
-    --hdf5FolderPath ./dataset/cleaned_splits/crop/split${split_id} \
+CUDA_VISIBLE_DEVICES=${gpus} python train.py --name ${exp_name}_${split_id} \
+    --splitPath ./new_splits/crop/split${split_id} \
     --dataset_mode Augment_sepstereo \
     --datalist FAIR_data \
     --save_epoch_freq 20 \

@@ -2,8 +2,8 @@ gpus=${1}
 split_id=${2}
 exp_name=Augment_APNet_sepstereo_blending
 
-CUDA_VISIBLE_DEVICES=${gpus} python train_diffusion.py --name ${exp_name}_${split_id} \
-    --hdf5FolderPath ./dataset/cleaned_splits/split${split_id} \
+CUDA_VISIBLE_DEVICES=${gpus} python train.py --name ${exp_name}_${split_id} \
+    --splitPath ./new_splits/split${split_id} \
     --fusion_model APNet \
     --dataset_mode Augment_sepstereo \
     --datalist FAIR_data \
