@@ -22,7 +22,9 @@ pip install -r requirements.txt
 
 ## Training and Testing
 
-All the training and testing bash scripts can be found in *'./scripts'*. For [**FAIR-Play**](https://github.com/facebookresearch/FAIR-Play) dataset, we create five non-overlapping splits in folder *'new_splits'* as illustrated in the paper. Before training, please replace the contained items 'xxxxxx.mp3' into absolute path and ensure the 'audio\_resave' folder and 'frames' folder locate in the same directory. Similarly, the items in 'data/mono_sources' should be modified to absolute path. The model trained on the non-overlapping split1 can be found [here](https://drive.google.com/drive/folders/1F13jx4XV6mOI46yE8FXJNqHIi4U3W7Vm?usp=sharing).
+All the training and testing bash scripts can be found in *'./scripts'*. For [**FAIR-Play**](https://github.com/facebookresearch/FAIR-Play) dataset, we create five non-overlapping splits in folder *'new_splits'* as illustrated in the paper. Before training, please replace the contained items 'xxxxxx.mp3' into absolute path and ensure the 'audio\_resave' folder and 'frames' folder locate in the same directory.
+Notice that, each item in 'data/mono\_sources' is the audio file as well as *the cropped object patch*. For each video presented in 'data/mono\_sources', I crop the object out and store the patches into 'new\_patches' folder. The Faster-RCNN model from [this repo](https://github.com/rhgao/co-separation) has been adopted to do the cropping. 
+The model trained on the non-overlapping split1 can be found [here](https://drive.google.com/drive/folders/1F13jx4XV6mOI46yE8FXJNqHIi4U3W7Vm?usp=sharing).
 
 We have tried two different schemes for creating the pseudo visual-stereo pairs. One method is padding the visual patches on a pre-defined background image and leveraging the Possion blending to refine the boundary. Another is to place the visual patches on an empty background. We found the performance of empty background scheme is slightly better than the blending one.
 <img src='docs/diff-background.png' width=800>
